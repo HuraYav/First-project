@@ -2,11 +2,11 @@ import sys
 import os
 
 def main():
-    username = "91282"
+    username = "ad91234"
     try:
-        password_proxy = raw_input("44192")
+        password_proxy = raw_input("write your pass")
     except:
-        password_proxy = input("44192")
+        password_proxy = input("write your pass")
     
     # Установка необходимых пакетов
     os.system("apt-get update")
@@ -44,7 +44,7 @@ socks pass {
     # Добавляем 1000 прокси с разными портами
     with open("/home/dante/danted.conf", "w") as f:
         f.write(conf)
-        for port in range(1080, 2080):  # Порты от 1080 до 2079
+        for port in range(3000, 30999):  # Порты от 1080 до 2079
             f.write(f"internal: eth0 port = {port}\n")
     
     # Создание пользователя
@@ -77,7 +77,7 @@ exit 0
     os.system("echo '________________________________'")
     os.system("echo ' '")
     os.system("echo \"YOUR IP ADDRESS: `hostname -I | awk '{print $1}'`\"")
-    os.system("echo 'PORT RANGE: 1080-2079'")
+    os.system("echo 'PORT RANGE: 30000-30999'")
     os.system("echo 'LOGIN: %s'" % username)
     os.system("echo 'PASSWORD: %s'" % password_proxy)
 

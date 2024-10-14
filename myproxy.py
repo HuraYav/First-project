@@ -44,7 +44,7 @@ socks pass {
     # Добавляем 1000 прокси с разными портами
     with open("/home/dante/danted.conf", "w") as f:
         f.write(conf)
-        for port in range(30000, 30999):  # Порты от 1080 до 2079
+        for port in range(1080, 2079):  # Порты от 1080 до 2079
             f.write(f"internal: eth0 port = {port}\n")
     
     # Создание пользователя
@@ -55,7 +55,7 @@ socks pass {
     os.system("apt-get -y install ufw")
     os.system("ufw status")
     os.system("ufw allow ssh")
-    os.system("ufw allow proto tcp from any to any port 30000:30999")
+    os.system("ufw allow proto tcp from any to any port 1080:2079")
     os.system("ufw status numbered")
     os.system("echo 'y' | ufw enable")
 
@@ -77,7 +77,7 @@ exit 0
     os.system("echo '________________________________'")
     os.system("echo ' '")
     os.system("echo \"YOUR IP ADDRESS: `hostname -I | awk '{print $1}'`\"")
-    os.system("echo 'PORT RANGE: 30000-30999'")
+    os.system("echo 'PORT RANGE: 1080-2079'")
     os.system("echo 'LOGIN: %s'" % username)
     os.system("echo 'PASSWORD: %s'" % password_proxy)
 
